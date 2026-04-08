@@ -21,13 +21,13 @@ This repository documents the transition from traditional HIDS to a unified **El
 ### Phase 2: Detection Engineering (Custom Rule Creation)
 * Engineered a **Custom Threshold Rule** to mitigate false negatives in Windows-specific SSH attacks.
 * **Logic:** Filtered for `winlog.event_id : 4625` with a threshold of 3 failures per minute.
-* **Evidence:** [Elastic Rule Editor showing the custom query](./img/screenshot(2008).png), [...](./img/screenshot(2014).png)
+* **Evidence:** [Elastic Rule Editor showing the custom query](./img/screenshot(2008).png), [2](./img/screenshot(2014).png)
 
 ### Phase 3: Alert Validation
 * Validated the detection pipeline by re-running the Hydra brute-force simulation.
 * Confirmed the rule triggered a severity alert in the **Security Alerts** dashboard.
-* **Evidence:** [Elastic Alerts dashboard showing](./img/screenshot(2015).png), [...](./img/screenshot(2016).png)
+* **Evidence:** [Elastic Alerts dashboard showing](./img/screenshot(2015).png), [2](./img/screenshot(2016).png)
 
 ## 4. Troubleshooting & Engineering Insights
 A significant portion of this project involved resolving **Data Ingestion Gaps**. I performed a schema audit to align rule logic with the `winlog` and `logs-*` index patterns, ensuring telemetry from the Windows agent correctly mapped to the SIEM's detection engine.
-*[The "Under the Hood" JSON](./img/screenshot(2004).png), [...](./img/screenshot(2018).png)
+*[The "Under the Hood" JSON](./img/screenshot(2004).png), [2](./img/screenshot(2018).png)
